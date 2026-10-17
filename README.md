@@ -35,7 +35,7 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
 * **Cost-Efficient for Moderate to High Scale:** For many production workloads, you don't need a massive distributed vector cluster. A well-tuned Postgres instance with `pgvector` handles millions of vectors efficiently while leveraging Postgres's robust indexing (HNSW and IVFFlat) and query optimizer.
 
 ## Prerequisites
-* **PostgreSQL with `pgvector` extension on podman by creating podman-compose.yml
+* **PostgreSQL with `pgvector` extension on podman by creating podman-compose.yml**
   ```nvim
   services:
     postgres:
@@ -46,7 +46,7 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
     pgdata:
   
   ```
-* **Create database to be used for semantic search with description as embedding
+* **Create database to be used for semantic search with description as embedding**
   ```psql
   CREATE DATABASE products;
 
@@ -61,11 +61,11 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
     embedding VECTOR(768) -- refer to nomic-embed-text
   );
   ```
-* **Install ollama, psycopg2 to communicate between postgresql with local AI ollama
+* **Install ollama, psycopg2 to communicate between postgresql with local AI ollama**
   ```zsh
   python3 -m install ollama, psycopg2 --break-system-packages
   ```
-* **Using `nomic-embed-text` as local model to generate embedding
+* **Using `nomic-embed-text` as local model to generate embedding**
   ```zsh
   ollama pull nomic-embed-text
   ```
