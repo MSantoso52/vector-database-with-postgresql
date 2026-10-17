@@ -3,6 +3,7 @@ Integrated pgvector into PostgreSQL to enable efficient vector storage and simil
 
 
 https://github.com/user-attachments/assets/84d6429a-2d5c-44b3-b346-3b5dd8d15e97
+
 ---
 
 ### 1. What is a Vector Database?
