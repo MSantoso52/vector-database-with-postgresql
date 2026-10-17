@@ -39,10 +39,10 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
   ```nvim
   services:
     postgres:
-      images: docker.io/pgvector/pgvector:17
+      image: docker.io/pgvector/pgvector:17
     ...
 
-  volume:
+  volumes:
     pgdata:
   
   ```
