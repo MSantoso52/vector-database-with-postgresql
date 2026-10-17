@@ -70,7 +70,24 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
   ```
 
 ## Project Flow
-* **Insert Data into PostgreSQL database***
+* **Insert Data into PostgreSQL database**
+  ```psql
+  INSERT INTO electronics (product, description)
+  VALUES(' Prestige 13 AI+, Prestige 14 Flip AI+, Prestige N16 Flip AI+ MSI','The Prestige 13 AI+ features an Intel Core i5 CPU, NVIDIA GeForce MX250, 8GB RAM, 256GB SSD, 13.3-inch FHD display. Prestige 14 Flip AI+ has an Intel Core i7 CPU, NVIDIA GeForce RTX 2060, 16GB RAM, 1TB SSD, 15.6-inch FHD display. Prestige N16 Flip AI+ includes an Intel Core i7 CPU, NVIDIA GeForce RTX 2060, 16GB RAM, 1TB SSD, 15.6-inch FHD display. All models feature USB 3.2, HDMI, USB-C, and USB 3.0 ports.'), ...;
+  ```
 * **Write vector into embedding using Ollama with `nomic-embed-text` model**
+  ```nvim
+  # Embed with Ollama
+  response = ollama.embed(model=MODEL_NAME, input=quote_text)
+  embedding_vector = response['embeddings'][0]
+  ```
 * **Using user input as interactive prompt to PostgreSQL query by find the vector with `nomic-embed-text` model**
+  ```nvim
+  # 1.Embed Query via Ollama
+  response = ollama.embed(model=MODEL_NAME, input=search_query)
+  embedding_vector = response['embeddings'][0]
+  ```
 * **Wrap it all as WEB app using Streamlit**
+  ```zsh
+  streamlit run app_electronic.py
+  ```
