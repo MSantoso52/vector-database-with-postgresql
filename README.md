@@ -40,7 +40,7 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
   services:
     postgres:
       images: docker.io/pgvector/pgvector:17
-  ...
+    ...
 
   volume:
     pgdata:
