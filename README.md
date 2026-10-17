@@ -91,3 +91,4 @@ Traditional databases struggle with unstructured data and semantic nuance. Vecto
   ```zsh
   streamlit run app_electronic.py
   ```
+  Access it from web browser through `localhost:8501`
